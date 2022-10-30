@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.json
+*.pt
+*.bin
+*.pth
+*tfevents*
+*.wav
+*.txt
+sandhi.py
