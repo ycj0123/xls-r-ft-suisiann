@@ -5,7 +5,7 @@ from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
 import torchaudio
 import gradio as gr
 
-model_name = '/home/ycj0123/xlsr/wav2vec2-large-xls-r-300m-taigi-newtknr-hd1/checkpoint-3000'
+model_name = 'wav2vec2-large-xls-r-300m-taigi-test/checkpoint-1600'
 model = Wav2Vec2ForCTC.from_pretrained(model_name).to("cuda")
 processor = Wav2Vec2Processor.from_pretrained(model_name, unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 
@@ -24,6 +24,7 @@ def inference(file, state=''):
     num_tone_obj = 拆文分析器.建立句物件(num_tone)
     # print(f"Prediction: {num_tone_obj.轉音(臺灣閩南語羅馬字拼音, '轉調符').看語句()}")
     state = state + num_tone_obj.轉音(臺灣閩南語羅馬字拼音, '轉調符').看語句()
+    # return num_tone_obj.轉音(臺灣閩南語羅馬字拼音, '轉調符').看語句()
     return state, state
 
 gr.Interface(

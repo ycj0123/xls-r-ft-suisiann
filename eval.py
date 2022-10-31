@@ -9,7 +9,7 @@ from modules.suisiann import add_prefix
 from tokenizer import preprocess_text
 
 # load model and processor
-model_name = './wav2vec2-large-xls-r-300m-taigi-test/checkpoint-3000'
+model_name = 'wav2vec2-large-xls-r-300m-taigi-test/checkpoint-1600'
 model = Wav2Vec2ForCTC.from_pretrained(model_name).to("cuda")
 processor = Wav2Vec2Processor.from_pretrained(model_name, unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 
@@ -20,6 +20,7 @@ ss = Dataset.from_csv(csv_dir).map(add_prefix, fn_kwargs={'root': data_dir})
 ss = ss.train_test_split(test_size=0.02)
 ss = ss['test']
 ss = preprocess_text(ss)
+ss = ss.cast_column("audio", Audio(sampling_rate=16_000))
 
 def cal_length(batch):
     batch["input_length"] = len(batch['audio']['array'])

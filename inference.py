@@ -4,7 +4,7 @@ from 臺灣言語工具.音標系統.閩南語.臺灣閩南語羅馬字拼音 im
 from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
 import torchaudio
 
-model_name = './wav2vec2-large-xls-r-300m-taigi-test/checkpoint-3000'
+model_name = 'wav2vec2-large-xls-r-300m-taigi-test/checkpoint-1600'
 model = Wav2Vec2ForCTC.from_pretrained(model_name).to("cuda")
 processor = Wav2Vec2Processor.from_pretrained(model_name, unk_token="[UNK]", pad_token="[PAD]", word_delimiter_token="|")
 

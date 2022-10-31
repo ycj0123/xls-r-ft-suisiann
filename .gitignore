@@ -136,3 +136,4 @@ dmypy.json
 *.wav
 *.txt
 sandhi.py
+!requirements.txt

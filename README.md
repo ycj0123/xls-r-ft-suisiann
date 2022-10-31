@@ -1,8 +1,11 @@
 # xls-r-ft-suisiann
-Fine-tuning XLS-R on the SuíSiann Dataset.
+A script for fine-tuning XLS-R on the SuíSiann Dataset for Taiwanese (Tâi-gí).
+
+Set `model_name = "itk0123/wav2vec2-large-xls-r-300m-taigi"` to use a fine-tuned model if you want to skip training.
 
 ```bash=
 # generate tokenizer
+# rm -rf ~/.cache/huggingface/datasets/csv/*
 python tokenizer.py
 
 # train the model
