@@ -1,5 +1,6 @@
 # xls-r-ft-suisiann
 A script for fine-tuning XLS-R on the SuíSiann Dataset for Taiwanese (Tâi-gí).
+
 Code modified baseed on the article [**Fine-tuning XLS-R for Multi-Lingual ASR with 🤗 Transformers**](https://huggingface.co/blog/fine-tune-xlsr-wav2vec2).
 
 Set `model_name = "itk0123/wav2vec2-large-xls-r-300m-taigi"` to use a fine-tuned model if you want to skip training.
