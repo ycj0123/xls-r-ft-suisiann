@@ -22,6 +22,6 @@ python inference.py
 # open a gradio web app
 python gradio_run.py
 
-# push the fine_tuned model to HuggingFace model hub
+# push the fine-tuned model to the Hugging Face Hub
 python push_to_hub.py
 ```
